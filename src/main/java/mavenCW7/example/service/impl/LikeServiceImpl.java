@@ -6,9 +6,8 @@ import mavenCW7.example.entity.Tweet;
 import mavenCW7.example.entity.User;
 import mavenCW7.example.service.LikeService;
 
-import javax.xml.crypto.Data;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+
 
 public class LikeServiceImpl implements LikeService {
 
@@ -16,7 +15,7 @@ public class LikeServiceImpl implements LikeService {
     @Override
     public void like(Tweet tweet, User user) {
         for(Like like: Database.likes){
-            if(like.getUser().equals(user) && like.getTweet().equals(tweet)){
+            if(like!=null&&like.getUser().getUserName().equals(user.getUserName()) && like.getTweet().equals(tweet)){
                 System.out.println("You liked this tweet already !");
                 return;
             }
@@ -32,8 +31,9 @@ public class LikeServiceImpl implements LikeService {
     }
 
     @Override
-    public void unlike(Tweet tweet, User user) {
+    public void disslike(Tweet tweet, User user) {
 
     }
+
 
 }

@@ -17,7 +17,7 @@ public class TweetService implements mavenCW7.example.service.TweetService {
         User user = Database.loggedUser;
         LocalDateTime createdAt = LocalDateTime.now();
 
-        Tweet tweet = new Tweet(id, tweetText, user, createdAt);
+        Tweet tweet = new Tweet(id, tweetText, user, createdAt , 0);
         Database.tweets[Database.tweetIndex] = tweet;
         Database.tweetIndex++;
 

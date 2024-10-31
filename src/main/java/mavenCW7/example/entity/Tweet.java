@@ -7,10 +7,9 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @AllArgsConstructor
 @NoArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
-@ToString
 
 public class Tweet {
 
@@ -18,5 +17,6 @@ public class Tweet {
     String text;
     User user;
     LocalDateTime createdAt;
+    int likeCount;
 
 }

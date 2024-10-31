@@ -3,6 +3,8 @@ package mavenCW7.example;
 import mavenCW7.example.database.Database;
 import mavenCW7.example.entity.User;
 import mavenCW7.example.menu.Menu;
+import mavenCW7.example.service.LikeService;
+import mavenCW7.example.service.impl.LikeServiceImpl;
 import mavenCW7.example.service.impl.TweetService;
 
 import java.awt.*;
@@ -21,6 +23,9 @@ public class Main {
         tweetService.addTweet("2nd tweet from user u1");
         tweetService.addTweet("3rd tweet from user u1");
         tweetService.addTweet("4th tweet from user u1");
+
+        LikeService likeService = new LikeServiceImpl();
+        likeService.like(Database.tweets[0] , u1);
 
         Menu.displayMenu();
 
